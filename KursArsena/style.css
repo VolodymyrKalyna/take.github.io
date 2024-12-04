@@ -1,0 +1,1753 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Manrope, sans-serif;
+}
+
+
+.bold {
+    font-weight: 800 !important;
+    color: #1F1E17 !important;
+}
+
+/* МОДАЛЬНЕ ВІКНО */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1500;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px 20px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ХЕДЕР */
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.contact-info, .social-icons, .navbar {
+    display: none;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+.burger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 10px);
+}
+
+.burger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -10px);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    max-height: 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.navbar.active {
+    max-height: 400px;
+    z-index: 5;
+    background-color: white;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #878680;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.navbar-icons a {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #4BAF47;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+    /*ГОЛОВНА*/
+
+.element-wheat, .element-leaf {
+    display: none;
+}
+
+.hero-section {
+    height: 510px;
+    background-image: url('../img/back1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    color: #fff;
+    padding: 20px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.hero-section h1 {
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+.hero-section h2 {
+    font-size: 2em;
+}
+
+.hero-section p {
+    max-width: 450px;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 196px;
+    height: 58px;
+    background: #4BAF47;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.hero-button:hover {
+    background-color: #2e5d27;
+}
+
+    /*ОСОБЛИВОСТІ*/
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    margin: 50px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    height: 264px;
+    width: 100%;
+    max-width: 370px;
+    padding: 20px;
+}
+
+.card-image {
+    width: 90px;
+    height: 90px;
+}
+
+.card-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: #EEC044;
+    margin-bottom: 19px;
+}
+
+.card-text {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1F1E17;
+}
+
+@media (min-width: 768px) {
+    .cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: -100px 0 0 0;
+    }
+}
+
+/*НАШІ ЗНАЙОМСТВА*/
+
+.introduction-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.intro-image {
+    flex: 1;
+    max-width: 620px;
+    width: 100%;
+    height: auto;
+    max-height: 640px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 5px;
+}
+
+.intro-text h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #EEC044;
+}
+
+.intro-text h3 {
+    font-weight: 800;
+    font-size: 16px;
+    color: #1F1E17;
+}
+
+.intro-text p {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.intro-green {
+    font-weight: 800 !important;
+    color: #4BAF47 !important;
+}
+
+.intro-grey, .intro-grey-service {
+    font-weight: 500 !important;
+    color: #878680;
+    max-width: 480px;
+}
+
+.icons-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.icon-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon-block img {
+    width: 64px;
+    height: 64px;
+}
+
+.learn-more-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    width: 196px;
+    height: 60px;
+    background: #4BAF47;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.learn-more-button:hover {
+    background-color: #2e5d27;
+}
+
+.intro-block-two {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+    /*ПОСЛУГИ*/
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 0;
+    text-align: center;
+    gap: 50px;
+    background: linear-gradient(
+            to bottom,
+            #F8F7F0 0%,
+            #F8F7F0 50%,
+            #fff 15%,
+            #fff 100%);
+}
+
+.services h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #EEC044;
+}
+
+.services h3 {
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 58px;
+    color: #1F1E17;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card-service {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 270px;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 36px 0;
+}
+
+.back-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: #fff;
+    text-align: center;
+    z-index: 2;
+    width: 220px;
+    height: 128px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.icon-wrapper {
+    background: #C5CE38;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    margin-top: -35px;
+}
+
+.icon {
+    width: 50px;
+    height: 45px;
+}
+
+.card-service h4 {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+    color: #1F1E17;
+    margin-top: 13px;
+}
+
+.card-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f1f1ed;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 109px;
+    height: 46px;
+    background: #4BAF47;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 36px;
+}
+
+.card-button:hover {
+    background-color: #1c2741;
+}
+
+.services-prop {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    max-width: 1170px;
+    height: 200px;
+    background: #4BAF47;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-bottom: -120px;
+    padding: 20px;
+    z-index: 10;
+}
+
+/*ТИПУ ВІДЕО*/
+
+.agriculture-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-image: url('../img/back2.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding: 20px;
+}
+
+.agriculture-section h2 {
+    font-weight: 800;
+    font-size: 28px;
+}
+
+/*ПРОЕКТИ*/
+
+.recent-projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.recent-projects h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #EEC044;
+}
+
+.recent-projects p {
+    font-weight: 800;
+    font-size: 28px;
+    color: #1F1E17;
+}
+
+.project-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-card {
+    position: relative;
+    width: 362px;
+    height: 558px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.project-text {
+    position: absolute;
+    bottom: 53px;
+    left: 40px;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+/*ВІДГУКИ*/
+
+.reviews-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 100px 20px;
+    background: #F8F7F0;
+}
+
+.reviews-section h2, .reviews-section-about h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #EEC044;
+}
+
+.reviews-section h3, .reviews-section-about h3 {
+    font-weight: 800;
+    font-size: 28px;
+    color: #1F1E17;
+}
+
+.reviews-section p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #878680;
+}
+
+.view-reviews-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 241px;
+    height: 60px;
+    background: #4BAF47;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.view-reviews-button:hover {
+    background-color: #1c2741;
+}
+
+.review-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 770px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.review {
+    width: 100%;
+    max-width: 495px;
+}
+
+.review p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 36px;
+    color: #878680;
+}
+
+.review-author-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-author {
+    font-weight: 800 !important;
+    font-size: 24px !important;
+    color: #1F1E17 !important;
+}
+
+.stars {
+    color: #FFD700;
+}
+
+.review-image {
+    margin-top: 50px;
+}
+
+.review-image img {
+    width: 100%;
+}
+
+.reviews-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.arrows-rew {
+    display: none;
+}
+
+    /*ПЕРЕВАГИ*/
+
+.farm-advantages {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.image-block {
+    width: 100%;
+    max-width: 699px;
+}
+
+.image-block img {
+    width: 100%;
+    height: 100%;
+    max-height: 733px;
+}
+
+.content-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content-block h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #EEC044;
+}
+
+.content-block h3 {
+    font-weight: 800;
+    font-size: 28px;
+    color: #1F1E17;
+}
+
+.content-block p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #878680;
+}
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.advantage {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.advantage h4 {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 34px;
+    color: #1F1E17;
+}
+
+.learn-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 196px;
+    height: 60px;
+    background: #4BAF47;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.learn-more:hover {
+    background-color: #1c2741;
+}
+
+    /*БЛОГ*/
+
+.news-articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.news-articles h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #EEC044;
+}
+
+.news-articles h3 {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 58px;
+    color: #1F1E17;
+}
+
+.cards-container-two {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1170px;
+}
+
+.card-two {
+    height: 513px;
+    width: 100%;
+    max-width: 369px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f1f1ed;
+}
+
+.card-content-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 214px;
+    background: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+}
+
+.date {
+    padding: 12px 16px;
+    color: #FFFFFF;
+    height: 40px;
+    background: #4BAF47;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    margin: -60px 0 16px;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.icon-card {
+    width: 13px;
+    height: 13px;
+}
+
+.card-two h4 {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 36px;
+    color: #1F1E17;
+}
+
+.line-beige {
+    width: 100%;
+    height: 235px;
+    background: #F8F7F0;
+    margin-top: 100px;
+}
+
+/*ФУТЕР*/
+
+.footer {
+    background: #24231D;
+    color: #f1f1ed;
+    padding: 120px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+}
+
+.footer h4 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+
+.footer hr {
+    width: 55px;
+    border: 2px solid #4BAF47;
+    border-radius: 2px;
+}
+
+.about, .explore, .news, .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 270px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 30px;
+    color: #A5A49A;
+}
+
+.about img{
+    width: 170px;
+    height: 51px;
+}
+
+.explore {
+    width: 200px;
+}
+
+.news {
+    width: 220px;
+    margin-right: 160px;
+}
+
+.news li p{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.news li p span{
+    display: block;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 28px;
+    color: #EEC044;
+}
+
+.social-icons-two  {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons-two a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background: #1F1E17;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #d1d1d1;
+}
+
+.footer .contact form {
+    display: flex;
+}
+
+.footer .contact input[type="email"] {
+    padding: 0 21px;
+    border: none;
+    width: 230px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.footer .contact button {
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 50px;
+    height: 50px;
+    background: #4BAF47;
+    border-radius: 0 10px 10px 0;
+    margin-left: -10px;
+}
+
+.footer .contact button:hover {
+    background-color: #065e3a;
+}
+
+.copy-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    background: #1F1E17;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 30px;
+    color: #A5A49A;
+    padding: 0 20px;
+}
+
+    /*СТОРІНКА ПРО НАС*/
+
+.hero-section-about {
+    height: 326px;
+    background-image: url('../img/back3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.hero-section-about p{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*ТИПУ ВІДЕО*/
+
+.agriculture-section-about {
+    width: 100%;
+    height: 616px;
+    background-image: url('../img/back4.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    padding: 100px 0;
+}
+
+.black-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 200px;
+    background-image: url('../img/vegetables-01.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: #1F1E17;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #A5A49A;
+    padding: 10px;
+}
+
+/*ВІДГУКИ*/
+
+.reviews-section-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 20px;
+    background-image: url('../img/Section1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.reviews-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/*ФЕРМЕРИ*/
+
+
+.farmers-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.farmers-section h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #EEC044;
+}
+
+.farmers-section h3 {
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 58px;
+    color: #1F1E17;
+}
+
+.farmers-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.farmer-card {
+    position: relative;
+    width: 100%;
+    max-width: 369px;
+}
+
+.farmer-image {
+    width: 100%;
+    height: 439px;
+}
+
+.info-box {
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    background: white;
+    padding: 20px 50px 0 0;
+    border-radius: 10px 0 0 10px;
+    width: 245px;
+    height: 92px;
+    text-align: right;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.farmer-name {
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 26px;
+    color: #1F1E17;
+}
+
+.farmer-role {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #878680;
+}
+
+/*СТОРІНКА ПОСЛУГИ*/
+
+.no-back {
+    background: none;
+}
+
+.back-lines {
+    background-image: url('../img/back-lines.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 235px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.back-lines img{
+    width: 190px;
+    height: 75px;
+}
+
+.agriculture-service {
+    background-image: url('../img/back5.png');
+}
+
+.card-container-service {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    margin-top: -89px;
+    z-index: 1000;
+}
+
+.card-service-two {
+    width: 100%;
+    max-width: 369px;
+    border-radius: 10px;
+    text-align: center;
+    background: #FFFFFF;
+}
+
+.card-service-two img {
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 10px 10px;
+}
+
+.card-title-service {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+    color: #1F1E17;
+    padding: 20px 0;
+}
+
+.block-cards-service {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.bl-card-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #4BAF47;
+    height: 198px;
+    width: 170px;
+    border-radius: 10px;
+    gap: 27px;
+    color: #FFFFFF;
+}
+
+.color-green {
+    background: #C5CE38;
+}
+
+.color-orange {
+    background: #EEC044;
+}
+
+.block-add {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/farm-green.png');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: #4BAF47;
+    height: 273px;
+    gap: 20px;
+}
+
+.add-text {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 48px;
+    letter-spacing: -3px;
+    color: #FFFFFF;
+}
+
+.yellow-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 45px;
+    color: #EEC044;
+    letter-spacing: 0;
+}
+
+.block-add a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 196px;
+    height: 60px;
+    background: #EEC044;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/*Свайпер*/
+
+.swiper-projects {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.swiper {
+    width: 100%;
+    max-width: 1170px;
+    height: 570px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #FFFFFF !important;
+}
+
+.project-card-swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 362px;
+    height: 558px;
+}
+
+.project-image-swiper {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.project-text-swiper {
+    position: absolute;
+    bottom: 53px;
+    left: 40px;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+    text-align: left;
+    max-width: 80%;
+}
+
+/*404*/
+
+.container-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+    text-align: center;
+}
+
+.container-404 h1 {
+    font-size: 120px;
+    font-weight: bold;
+    color: #4BAF47;
+    margin-bottom: 20px;
+}
+
+.container-404 p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #4BAF47;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #2b7e28;
+}
+
+@media (min-width: 768px) {
+    .header-top {
+        height: 100%;
+        min-height: 115px;
+        max-height: 200px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+    .burger-menu {
+        display: none;
+    }
+    .logo img{
+        height: 50px;
+        max-width: 170px;
+    }
+    .contact-info,  .social-icons {
+        display: flex;
+        align-items: center;
+    }
+    .contact-item {
+        height: 70px;
+        width: 100%;
+        max-width: 240px;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        border-right: 1px solid #E4E2D7;
+    }
+    .contact-item:last-child {
+        border-right: none;
+    }
+    .contact-item img {
+        height: 30px;
+    }
+    .ct-item-block {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        color: #878680;
+    }
+    .ct-item-block p {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #1F1E17;
+    }
+    .social-icons {
+        gap: 10px;
+        margin-left: 80px;
+    }
+    .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        background: #F8F7F0;
+        border-radius: 20px;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: static;
+        max-height: none;
+        border: none;
+        background-image: url('../img/navbar.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        z-index: 1000;
+    }
+    .nav-links {
+        flex-direction: row;
+        gap: 60px;
+    }
+    .nav-links a {
+        font-weight: 600;
+        color: #878680;
+        font-size: 16px;
+        line-height: 36px;
+    }
+    .navbar-icons {
+        gap: 30px;
+        margin: 0;
+    }
+
+    /*ГОЛОВНА*/
+
+    .hero-section {
+        height: 810px;
+        margin-top: -30px;
+    }
+    .hero-content {
+        gap: 18px;
+    }
+    .hero-section h1 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .hero-section h2 {
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 110px;
+    }
+    .hero-section p {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .btn-img {
+        display: flex;
+        gap: 20px;
+    }
+    .element-wheat, .element-leaf {
+        display: block;
+    }
+    .text-leaf {
+        position: relative;
+    }
+    .element-leaf {
+        position: absolute;
+        top: 90px;
+        right: -65px;
+    }
+
+    /*НАШІ ЗНАЙОМСТВА*/
+
+    .introduction-section {
+        padding: 100px 40px 120px;
+        align-items: center;
+    }
+    .intro-content {
+        flex-direction: row;
+        gap: 120px;
+    }
+
+    .intro-text h3 {
+        font-size: 48px;
+        line-height: 58px;
+    }
+    .intro-text p {
+        line-height: 30px;
+    }
+    .intro-green {
+        font-size: 26px !important;
+        margin: 30px 0;
+        max-width: 570px;
+    }
+    .intro-grey {
+        margin: 0 0 30px;
+    }
+    .icons-block {
+        margin: 0 0 40px;
+        gap: 15px;
+    }
+
+    /*ПОСЛУГИ*/
+
+    .services h3 {
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 58px;
+        color: #1F1E17;
+    }
+
+    /*ТИПУ ВІДЕО*/
+
+    .agriculture-section {
+        height: 697px;
+        padding-left: 19%;
+    }
+    .agriculture-section h2, .agriculture-section-about h2  {
+        font-size: 48px;
+        line-height: 84px;
+    }
+
+    /*ВІДГУКИ*/
+
+    .reviews-section {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 60px;
+        padding: 100px 20px;
+        background: #F8F7F0;
+    }
+    .review-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 254px;
+        padding: 0;
+    }
+    .reviews-block {
+        width: 370px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .reviews-block p {
+        width: 329px;
+    }
+    .arrows-rew {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        position: absolute;
+        top: 130px;
+        right: -25px;
+    }
+    .arrows-rew a{
+        width: 64px;
+        height: 64px;
+        background: #FFFFFF;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 32px;
+    }
+    .reviews-section h3, .reviews-section-about h3 {
+        font-size: 48px;
+        line-height: 58px;
+    }
+    .review-image {
+        margin-top: 0;
+    }
+    .review-author-rating {
+        margin-top: 30px;
+    }
+
+    /*ПРОЕКТИ*/
+
+    .recent-projects {
+        padding: 100px 20px;
+    }
+    .recent-projects p {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    /*ПЕРЕВАГИ*/
+
+    .farm-advantages {
+        justify-content: center;
+        flex-direction: row;
+        padding: 120px 0;
+    }
+    .content-block h3 {
+        font-size: 48px;
+        line-height: 58px;
+    }
+    .advantage {
+        width: 410px;
+    }
+
+    /*БЛОГ*/
+
+    .news-articles h3 {
+        margin-bottom: 50px;
+    }
+    .cards-container-two {
+        justify-content: center;
+    }
+
+    /*ФУТЕР*/
+    .footer {
+        justify-content: center;
+    }
+
+    /*СТОРІНКА ПРО НАС*/
+    .hero-section-about {
+        margin-top: -30px;
+    }
+    .black-section {
+        gap: 120px;
+    }
+
+    /*ВІДГУКИ*/
+    .reviews-blocks {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: left;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .rc-about {
+        padding: 30px;
+        height: 100%;
+        max-width: 600px;
+    }
+    .rv-about{
+       width: 330px;
+    }
+
+    /*ФЕРМЕРИ*/
+    .farmers-section {
+        padding: 100px 0 0;
+    }
+    .farmers-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+    .farmers-section h3 {
+        font-size: 48px;
+    }
+
+    /*ПОСЛУГИ*/
+    .intro-grey-service {
+        margin: 10px 0 0;
+    }
+    .block-add {
+        gap: 100px;
+        justify-content: space-evenly;
+    }
+    .add-text {
+        font-size: 40px;
+    }
+    .yellow-text {
+        font-size: 30px;
+    }
+}
