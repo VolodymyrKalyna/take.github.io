@@ -449,36 +449,18 @@
         <div class="review-block">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="review swiper-slide">
-                        <img src="img/img3.png" alt="img">
-                        <p>Дуже вдячний центру візової підтримки за допомогу з оформленням
-                            документів. Все було зроблено швидко, чітко та без зайвих питань.
-                            Завдяки їм я без проблем отримав візу для поїздки в Європу!</p>
-                        <div>
-                            <img src="img/man1.png" alt="img">
-                            <h3>Альберт Флорес<span>Web Designer</span></h3>
-                        </div>
-                    </div>
-                    <div class="review swiper-slide">
-                        <img src="img/img3.png" alt="img">
-                        <p>Цей центр дійсно знає, як працювати з клієнтами! Вони допомогли
-                            зібрати всі потрібні документи, надали детальні інструкції та завжди
-                            були на зв’язку. Рекомендую всім!</p>
-                        <div>
-                            <img src="img/man2.png" alt="img">
-                            <h3>Джон Смітт<span>SEO</span></h3>
-                        </div>
-                    </div>
-                </div>                
+                    <!-- Динамічний вміст буде додано за допомогою JS -->
+                </div>
             </div>
             <div class="swiper-arrows">
                 <div class="line"></div>
                 <div class="arrows-block">
                     <a href="#" class="swiper-button-prev"></a>
                     <a href="#" class="swiper-button-next"></a>
-                </div> 
+                </div>
             </div>
         </div>
+    </section>
     </section>
     <section class="proces-overview">
         <div class="text-block">
@@ -641,8 +623,33 @@
 
     <script src="script/script.js"></script>
     <script>
-        //Свайпер
-        const swiper = new Swiper('.swiper-container', {
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+    // Завантаження JSON
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(review => {
+                const reviewSlide = document.createElement('div');
+                reviewSlide.className = 'review swiper-slide';
+
+                reviewSlide.innerHTML = `
+                    <img src="${review.mainImage}" alt="Main Image">
+                    <p>${review.reviewText}</p>
+                    <div>
+                        <img src="${review.profileImage}" alt="Profile Image">
+                        <h3>${review.name}<span>${review.position}</span></h3>
+                    </div>
+                `;
+
+                swiperWrapper.appendChild(reviewSlide);
+            });
+
+            // Ініціалізація свайпера після додавання контенту
+            const swiper = new Swiper('.swiper-container', {
             slidesPerView: 1,
             spaceBetween: 20,
             navigation: {
@@ -650,8 +657,14 @@
                 prevEl: '.swiper-button-prev',
             },
             loop: true,
-            speed: 500,
+            speed: 600,
         });
+        })
+        .catch(error => console.error('Помилка завантаження JSON:', error));
+});
+
+
+        ;
     </script>
 </body>
 </html>
