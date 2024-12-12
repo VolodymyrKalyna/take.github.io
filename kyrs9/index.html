@@ -477,7 +477,6 @@
         <div class="review-block">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <!-- Динамічний вміст буде додано за допомогою JS -->
                 </div>
             </div>
             <div class="swiper-arrows">
@@ -656,7 +655,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const swiperWrapper = document.querySelector('.swiper-wrapper');
 
-    // Завантаження JSON
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
@@ -676,7 +674,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 swiperWrapper.appendChild(reviewSlide);
             });
 
-            // Ініціалізація свайпера після додавання контенту
             const swiper = new Swiper('.swiper-container', {
             slidesPerView: 1,
             spaceBetween: 20,
