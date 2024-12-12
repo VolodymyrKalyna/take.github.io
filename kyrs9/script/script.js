@@ -20,6 +20,7 @@ window.onclick = function (event) {
 
 const container = document.getElementById("pricing-cards-container");
 
+if(container){
 fetch("pricingPlans.json")
     .then(response => {
         if (!response.ok) {
@@ -46,5 +47,5 @@ fetch("pricingPlans.json")
     })
     .catch(error => {
         console.error("Error loading pricing plans:", error);
-    });
+    })};
 
