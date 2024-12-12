@@ -20,7 +20,6 @@ window.onclick = function (event) {
 
 const container = document.getElementById("pricing-cards-container");
 
-if(container){
 fetch("pricingPlans.json")
     .then(response => {
         if (!response.ok) {
@@ -47,5 +46,30 @@ fetch("pricingPlans.json")
     })
     .catch(error => {
         console.error("Error loading pricing plans:", error);
-    })};
+    });
+
+    // Отримуємо всі картки
+const cards = document.querySelectorAll('.count-card');
+
+// Додаємо обробник події для кожної картки
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        // При наведенні на картку, ми приховуємо інформацію у всіх картках
+        cards.forEach(otherCard => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('show-info'); // Приховуємо інформацію у всіх інших картках
+            }
+        });
+
+        // Показуємо інформацію в поточній картці
+        card.classList.add('show-info');
+    });
+
+    // Залишаємо події для "mouseleave", щоб інформація зникала при відведенні
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('show-info'); // Приховуємо інформацію, коли мишка залишає картку
+    });
+});
+
+
 
