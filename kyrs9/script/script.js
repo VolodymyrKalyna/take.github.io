@@ -19,7 +19,7 @@ window.onclick = function (event) {
 // Генерація скриптом
 
 const container = document.getElementById("pricing-cards-container");
-if(container){
+if(container){ 
 fetch("pricingPlans.json")
     .then(response => {
         if (!response.ok) {
