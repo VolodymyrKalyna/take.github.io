@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RouteX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png" sizes="16x16">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <meta name="description" content="Сайт центру візової підтримки">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Записатися на послугу</h2>
+        <form>
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Ваш email" required>
+
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </div>
+</div>
+<header>
+    <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="RouteX Logo">
+    </a>
+    <div class="menu-wrapper">
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="visa.html">Послуги</a></li>
+                <li><a href="price.html">Ціни</a></li>
+                <li><a href="offersvisa.html">Пропозиції</a></li>
+            </ul>
+        </nav>
+        <div class="cta">
+            <a href="#" onclick="openModal()">Записатися <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></a>
+        </div>
+    </div>
+    <div class="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+<section class="visa-offers-header">
+    <div class="visa-offers-content">
+        <h1>404 Помилка</h1>
+        <p>Головна<i class="fa-solid fa-angle-right fa-sm" style="color: #ffffff;"></i>404 Помилка</p>
+    </div>
+</section>
+<section class="not-found">
+    <div class="text-block">
+        <h2 class="highlight">Ой! Перевірте підключення<br>та повторіть спробу</h2>
+        <p>Ми забезпечуємо зручні рішення для подорожей завдяки
+            нашим послугам з оформлення віз та імміграції.
+            Подорожуйте світом із впевненістю та легкістю.</p>
+        <form>
+            <input type="text" name="text" placeholder="Шукати" required>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+        </form>
+        <div class="cta">
+            <a href="index.html">Головна</a>
+        </div>
+    </div>
+    <img src="img/img5.png" alt="img">
+</section>
+<footer class="footer">
+    <div class="footer-top">
+        <div class="travel-box">
+            <i class="fa-solid fa-money-bills fa-xl circle-icon-big" style="color: #ffffff;"></i>
+            <p>Потрібна допомога для <br>туру та візи?</p>
+        </div>
+        <div class="line-horizontal"></div>
+        <div class="travel-box">
+            <i class="fa-solid fa-earth-americas fa-xl circle-icon-big" style="color: #ffffff;"></i>
+            <p>Чи готові ви <br> розпочати подорож?</p>
+        </div>
+    </div>
+    <div class="footer-content">
+        <div class="footer-section">
+            <img src="img/logo2.png" alt="img">
+            <p>Корпоративний бізнес зазвичай відноситься до великомасштабних корпоративних підприємств.</p>
+            <div class="social-icons-two">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Послуги</h3>
+            <ul>
+                <li><i class="fa-solid fa-check fa-sm" style="color: #83CD20;"></i>Помилки, яких слід уникати</li>
+                <li><i class="fa-solid fa-check fa-sm" style="color: #83CD20;"></i>Ваш стартап</li>
+                <li><i class="fa-solid fa-check fa-sm" style="color: #83CD20;"></i>Знайте про шрифти</li>
+                <li><i class="fa-solid fa-check fa-sm" style="color: #83CD20;"></i>Знайте про цифри</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Корисні посилання</h3>
+            <ul>
+                <li><i class="fa-solid fa-chevron-right fa-sm" style="color: #83CD20;"></i>Останні новини</li>
+                <li><i class="fa-solid fa-chevron-right fa-sm" style="color: #83CD20;"></i>Кар'єра</li>
+                <li><i class="fa-solid fa-chevron-right fa-sm" style="color: #83CD20;"></i>Загальні запити</li>
+                <li><i class="fa-solid fa-chevron-right fa-sm" style="color: #83CD20;"></i>Дослідження</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Підпишіться на нашу розсилку</h3>
+            <p>Корпоративний бізнес зазвичай відноситься до великомасштабного.</p>
+            <form>
+                <input type="email" name="email" placeholder="Ваш email" required>
+                <button type="submit"><i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© Yoursitename 2024 | All Rights Reserved</p>
+        <ul>
+            <li><a href="#">Terms & Condition</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="script/script.js"></script>
+</body>
+</html>
